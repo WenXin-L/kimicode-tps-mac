@@ -1,0 +1,18 @@
+# 虚拟环境与构建产物
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# 运行期文件
+hud.log
+*.log
+*.state.json
+
+# 编辑器 / 系统
+.DS_Store
+.idea/
+.vscode/

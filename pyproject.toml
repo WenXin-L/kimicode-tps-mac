@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kimicode-tps-mac"
+version = "0.1.0"
+description = "macOS 菜单栏小组件：实时显示 Kimi Code 的 token 输出速度（TPS）与首字延迟"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Wen Xin" }]
+keywords = ["kimi-code", "tps", "tokens-per-second", "menubar", "macos", "rumps", "llm"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: MacOS X",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Utilities",
+]
+dependencies = [
+  "rumps>=0.4.0",
+  "pyobjc-framework-Cocoa>=9.0",
+  "websockets>=13.0",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5", "pytest>=8.0"]
+
+[project.scripts]
+kimicode-tps-mac = "kimicode_tps_mac.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/WenXin-L/kimicode-tps-mac"
+Issues = "https://github.com/WenXin-L/kimicode-tps-mac/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kimicode_tps_mac"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
